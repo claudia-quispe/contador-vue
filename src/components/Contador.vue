@@ -9,15 +9,15 @@
 <script>
 export default {
     name: 'Contador',
-    data() {
-      return {
-        respuestaClicks: 0,
+    computed: {
+      respuestaClicks() {
+        return this.$store.state.respuestaClicks
       }
     },
     methods: {
       counter() {
-        this.respuestaClicks++;        
-      },
+        this.$store.commit('increment')     
+      }
     }
 };
 </script>
